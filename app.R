@@ -69,6 +69,35 @@ review_stats <- df %>%
   ) %>%
   drop_na()
 
+#here, we have bunched up a couple of calculations that we want to highlight within the data story
+#these will be easy access when we want to bring attention to key headers/titles
+total_listings <- nrow(df)
+
+manhattan_median <- borough_stats %>%
+  filter(neighbourhood_group == "Manhattan") %>%
+  pull(median_price)
+
+bronx_median <- borough_stats %>%
+  filter(neighbourhood_group == "Bronx") %>%
+  pull(median_price)
+
+room_medians <- df %>%
+  group_by(room_type) %>%
+  summarise(median_price = median(price, na.rm = TRUE), .groups = "drop")
+
+entirehome_median <- room_medians %>%
+  filter(room_type == "Entire home/apt") %>%
+  pull(median_price)
+
+privateroom_median <- room_medians %>%
+  filter(room_type == "Private room") %>%
+  pull(median_price)
+
+sharedroom_median <- room_medians %>%
+  filter(room_type == "Shared room") %>%
+  pull(median_price)
+
+review_correlation <- cor(df$number_of_reviews, df$price, use = "complete.obs")
 
 ui <- fluidPage(
 
