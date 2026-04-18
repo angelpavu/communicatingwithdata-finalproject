@@ -109,9 +109,9 @@ boro_cols <- c(
 )
 
 room_cols <- c(
-  "Entire home/apt" = "red",
-  "Private room"    = "blue",
-  "Shared room"     = "green"
+  "Entire home/apt" = "darkred",
+  "Private room"    = "darkblue",
+  "Shared room"     = "darkgreen"
 )
 
 # we created a central story theme, which we hope mimics the style of NYT. 
@@ -242,36 +242,6 @@ ui <- fluidPage(
         margin-bottom: 1.3em;
       }
 
-      .stat-row {
-        display: flex;
-        gap: 12px;
-        margin: 38px 0;
-        flex-wrap: wrap;
-      }
-
-      .stat-box {
-        flex: 1;
-        min-width: 220px;
-        background: #fbf9f4;
-        border: 1px solid #ddd6ca;
-        padding: 24px 18px;
-        text-align: center;
-      }
-
-      .stat-num {
-        font-size: 38px;
-        font-weight: bold;
-        color: #3b82f6;
-        display: block;
-        margin-bottom: 6px;
-      }
-
-      .stat-label {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        color: #7c7165;
-      }
 
       .viz-block {
         background: #efe8dd;
@@ -374,7 +344,7 @@ ui <- fluidPage(
     p(
       class = "story-p dropcap",
       "Imagine you open Airbnb looking for a place to stay for a weekend in New York City. After scouring through
-      the website, you narrow it down to two choices. Both are studio apartmets. Both have solid reviews.
+      the website, you narrow it down to two choices. Both are studio apartments. Both have solid reviews.
        Both claim to be cozy and well-located. One costs $100 a night. The other one costs $350.
        You wonder what could explain the $250 difference, and if there is something you are not seeing. Don't worry, you are not
        missing anything."
@@ -384,27 +354,9 @@ ui <- fluidPage(
       class = "story-p",
       "We analyzed all 48,895 Airbnb listings across New York City's five boroughs to find
        out what actually drives the price of these listings. We looked at geography, room type, and review counts.
-       What we found confirms some of our previous expectations, but also disproves some others."
+       What we found confirms some of our previous expectations, but also gave us some surprises."
     ),
     
-    div(
-      class = "stat-row",
-      div(
-        class = "stat-box",
-        span(class = "stat-num", "48,895"),
-        span(class = "stat-label", "Real Listings Analyzed")
-      ),
-      div(
-        class = "stat-box",
-        span(class = "stat-num", paste0("$", round(manhattan_median))),
-        span(class = "stat-label", "Manhattan Median Per Night")
-      ),
-      div(
-        class = "stat-box",
-        span(class = "stat-num", paste0(round(entirehome_median / privateroom_median, 1), "x")),
-        span(class = "stat-label", "Entire Home vs. Private Room")
-      )
-    ),
     
     div(class = "section-rule", "Chapter I - Location"),
     div(class = "chapter-tag", "Part One"),
@@ -420,11 +372,9 @@ ui <- fluidPage(
     
     p(
       class = "story-p",
-      "Tribeca is the most expensive-stay neighborhood that tops all of NYC with a median of $295 a night. Flatiron District hits $225.
-       But the more telling story is what is happening across the river: DUMBO (Down Under the Manhattan Bridge Overpass) in Brooklyn
-       reaches $189. This is higher than many neighborhoods tourists consider squarely Manhattan.
-       The geographic hierarchy is not a simple gradient from center to edge. It is a patchwork
-       shaped by prestige, proximity, and the slow march of gentrification."
+      "Tribeca is the most expensive-stay neighborhood that tops all of NYC with a median of $295 a night, and Flatiron District is not far behind at $225.
+       But the true story is that New York does not price Airbnb listings in neat borough-wide tiers. Travelers may assume that leaving Manhattan guarantees a bargain, yet the data shows a more uneven reality.
+      Expensive pockets appear across NYC, and cheaper ones do too. What looks like a borough gap is really a neighborhood mosaic."
     ),
     
     div(
@@ -439,7 +389,7 @@ ui <- fluidPage(
     
     p(
       class = "story-p",
-      "The implication for travelers is clear but counterintuitive: booking Brooklyn to save
+      "The implication for travelers is clear but counterintuitive: booking Brooklyn instead of Manhattan to save
        money is a gamble. The borough you are in matters less than the
        specific pocket of the city you have landed in."
     ),
@@ -447,15 +397,15 @@ ui <- fluidPage(
     div(
       class = "pullquote",
       tags$p(
-        "DUMBO in Brooklyn commands a higher median Airbnb price than much of Harlem.
-         The borough label is a starting point, not a price tag."
+        "The dots representing the top neighborhood medians are proof that expensive listings are found in each borough.
+         The borough label is a starting point, not a price tag, and the neighborhood is really what seals the deal."
       ),
       tags$cite("Finding #1 · Price by Geography")
     ),
     
     div(class = "section-rule", "Chapter II - Room Type"),
     div(class = "chapter-tag", "Part Two"),
-    div(class = "story-h2", HTML("You Are Not Paying for Quality. <em>You Are Paying for a Closed Door.</em>")),
+    div(class = "story-h2", HTML("You Are Not Paying for Quality. <em>You Are Paying for Space and Privacy.</em>")),
     
     p(
       class = "story-p",
@@ -467,7 +417,7 @@ ui <- fluidPage(
     
     p(
       class = "story-p",
-      "But the more revealing story emerges when you look at the full distributions, not
+      "However the hidden story emerges when you look at the full distributions, not
        just the medians. A Manhattan entire-home listing at the 90th percentile costs $399
        a night. A Manhattan private room at the 90th percentile costs $175. The best private
        room in the city is still cheaper than a middle-of-the-road entire apartment. The
@@ -499,8 +449,8 @@ ui <- fluidPage(
     p(
       class = "story-p",
       "Here is where the data may surprise you. Most travelers assume that a listing
-       with 100 five-star reviews warrants a higher price than one with 15. That the wisdom of
-       crowds has been taken account into the rate. That hosts who have earned their reputation charge
+       with 100 five-star reviews warrants a higher price than one with 15. That the opinion of the people
+       has been taken account into the rate. That hosts who have earned their reputation charge
        at a higher rate."
     ),
     
@@ -515,7 +465,7 @@ ui <- fluidPage(
     
     div(
       class = "viz-block",
-      div(class = "viz-title", "Do More Reviews Mean Higher Prices? The Data Says No."),
+      div(class = "viz-title", "Do More Reviews Lead To Higher Listing Prices? The Data Says No."),
       div(
         class = "viz-sub",
         "Median nightly price by review bracket."
@@ -525,7 +475,7 @@ ui <- fluidPage(
     
     p(
       class = "story-p",
-      "The explanation, once you see it, makes sense: hosts price their listings based on
+      "The explanation makes sense: hosts price their listings based on
        what the market will bear for their location and space, and not on the reputation they
        have built. A host with 300 glowing reviews in Mott Haven still cannot charge Tribeca
        prices. A brand-new listing with zero reviews in the West Village can charge whatever
@@ -541,14 +491,14 @@ ui <- fluidPage(
          And reputation? It registers at essentially zero in the price equation."
       ),
       p(
-        "This should change how you shop. Stop reading review counts as price signals. Stop
+        "This should change how all travelers search for stays. Reading review counts should not be price signals. Stop
          assuming a well-reviewed listing justifies its rate. Instead, ask two questions
          before anything else: Exactly where is it and how much privacy am I getting?"
       ),
       p(
         "The price of a New York Airbnb turns out to be strikingly literal. You pay for a
-         zip code. You pay for privacy. The charm, the host's story, the glowing reviews are
-         all real. They just do not show up in the number."
+         zip code. You pay for privacy. The charm and the glowing reviews of the listing are
+         all real. They just do not show up in the final price number."
       ),
       p(
         class = "kicker",
@@ -566,7 +516,129 @@ ui <- fluidPage(
 
 
 server <- function(input, output) {
-
+  output$plot_location <- renderPlot({
+    boro_order <- borough_stats %>%
+      arrange(median_price) %>%
+      pull(neighbourhood_group)
+    
+    bs <- borough_stats %>%
+      mutate(neighbourhood_group = factor(neighbourhood_group, levels = boro_order))
+    
+    ns <- neighborhood_stats %>%
+      group_by(neighbourhood_group) %>%
+      slice_max(order_by = median_price, n = 6, with_ties = FALSE) %>%
+      ungroup() %>%
+      mutate(neighbourhood_group = factor(neighbourhood_group, levels = boro_order))
+    
+    ggplot() +
+      geom_col(
+        data = bs,
+        aes(x = median_price, y = neighbourhood_group, fill = neighbourhood_group),
+        alpha = 0.28,
+        width = 0.6
+      ) +
+      geom_point(
+        data = ns,
+        aes(x = median_price, y = neighbourhood_group, colour = neighbourhood_group),
+        size = 2.8,
+        alpha = 0.75,
+        position = position_jitter(height = 0.08, width = 0)
+      ) +
+      geom_text(
+        data = bs,
+        aes(x = median_price, y = neighbourhood_group, label = paste0("$", round(median_price))),
+        hjust = -0.15,
+        size = 3.8,
+        colour = "#1d1d1d"
+      ) +
+      scale_fill_manual(values = boro_cols, guide = "none") +
+      scale_colour_manual(values = boro_cols, guide = "none") +
+      scale_x_continuous(
+        labels = dollar_format(),
+        limits = c(0, max(c(bs$median_price, ns$median_price)) + 35)
+      ) +
+      labs(
+        x = "Median nightly price (USD)",
+        y = NULL,
+        title = "Location drives price, but neighborhoods still play a part",
+        subtitle = "Bars show borough medians. Dots show higher-priced neighborhoods with at least 50 listings.",
+        caption = "Source: NYC Airbnb Open Data, 2019"
+      ) +
+      story_theme() +
+      theme(axis.text.y = element_text(face = "bold"))
+  }, bg = "#f7f4ee")
+  
+  output$plot_roomtype <- renderPlot({
+    room_order <- c("Bronx", "Staten Island", "Queens", "Brooklyn", "Manhattan")
+    type_order <- c("Shared room", "Private room", "Entire home/apt")
+    
+    rs <- room_stats %>%
+      mutate(
+        neighbourhood_group = factor(neighbourhood_group, levels = room_order),
+        room_type = factor(room_type, levels = type_order)
+      )
+    
+    ggplot(rs, aes(y = neighbourhood_group, colour = room_type)) +
+      geom_segment(
+        aes(
+          x = p10, xend = p90,
+          y = neighbourhood_group, yend = neighbourhood_group
+        ),
+        linewidth = 1,
+        alpha = 0.35,
+        position = position_dodge(width = 0.65)
+      ) +
+      geom_point(
+        aes(x = median),
+        size = 2.8,
+        position = position_dodge(width = 0.65)
+      ) +
+      geom_text(
+        aes(x = median, label = paste0("$", round(median))),
+        hjust = -0.2,
+        size = 3.3,
+        position = position_dodge(width = 0.65),
+        show.legend = FALSE
+      ) +
+      scale_colour_manual(values = room_cols) +
+      scale_x_continuous(
+        labels = dollar_format(),
+        limits = c(0, max(rs$p90) + 40)
+      ) +
+      labs(
+        x = "Nightly price (USD)",
+        y = NULL,
+        title = "Privacy and Space create clear price tiers",
+        subtitle = "Each line shows the 10th to 90th percentile range. Each point shows the median.",
+        caption = "Source: NYC Airbnb Open Data, 2019"
+      ) +
+      story_theme() +
+      theme(axis.text.y = element_text(face = "bold"))
+  }, bg = "#f7f4ee")
+  
+  output$plot_reviews <- renderPlot({
+    ggplot(review_stats, aes(x = review_group, y = median_price)) +
+      geom_col(fill = "#1f4e79", alpha = 0.82, width = 0.65) +
+      geom_text(
+        aes(label = paste0("$", round(median_price))),
+        vjust = -0.4,
+        size = 4,
+        colour = "#1f4e79"
+      ) +
+      scale_y_continuous(
+        labels = dollar_format(),
+        limits = c(0, max(review_stats$median_price) + 25)
+      ) +
+      labs(
+        x = "Number of reviews",
+        y = "Median nightly price",
+        title = "Review count has little pricing power",
+        subtitle = paste0("Pearson correlation between number of reviews and price: ", round(review_correlation, 2)),
+        caption = "Source: NYC Airbnb Open Data, 2019"
+      ) +
+      story_theme() +
+      theme(panel.grid.major.y = element_line(colour = "#ddd6ca", linewidth = 0.45))
+  }, bg = "#f7f4ee")
    
 }
 
