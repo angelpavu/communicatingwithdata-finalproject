@@ -25,11 +25,8 @@ We used 48,895 listings across all five boroughs to understand what drives price
 - User-driven exploration of pricing patterns
 
 ## Tools Used
-- R
+- R Studio
 - Shiny
-- ggplot2
-- plotly
-- tidyverse
 
 ## How to Run Locally
 
