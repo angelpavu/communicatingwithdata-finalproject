@@ -35,4 +35,4 @@ We used 48,895 listings across all five boroughs to understand what drives price
 
 1. Clone the repo:
 ```bash
-git clone YOUR-REPO-LINK
+git clone https://github.com/angelpavu/communicatingwithdata-finalproject/tree/master
