@@ -1,12 +1,3 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    https://shiny.posit.co/
-#
-
 library(shiny)
 library(tidyverse)
 library(scales)
@@ -142,7 +133,6 @@ ui <- fluidPage(
         font-family: Georgia, 'Times New Roman', serif;
       }
 
-      
       .hero {
         background: #1d1d1d;
         color: #f4f1ea;
@@ -184,7 +174,6 @@ ui <- fluidPage(
         padding: 0 24px 50px 24px;
       }
 
-
       .chapter-tag {
         color: #3b82f6;
         font-size: 13px;
@@ -220,7 +209,6 @@ ui <- fluidPage(
         line-height: 1.85;
         margin-bottom: 1.3em;
       }
-
 
       .viz-block {
         background: #efe8dd;
@@ -300,114 +288,122 @@ ui <- fluidPage(
         letter-spacing: 1px;
         text-transform: uppercase;
       }
+      
       .explore-section {
-  background: #1d1d1d;              /* same as hero */
-  color: #f4f1ea;
-  text-align: center;
-  padding: 70px 25px;
-  margin-top: 60px;
-}
+        background: #1d1d1d;
+        color: #f4f1ea;
+        text-align: center;
+        padding: 70px 25px;
+        margin-top: 60px;
+      }
 
-.explore-small {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #3b82f6;                  /* your blue accent */
-  margin-bottom: 15px;
-}
+      .explore-small {
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #3b82f6;
+        margin-bottom: 15px;
+      }
 
-.explore-title {
-  font-size: 38px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+      .explore-title {
+        font-size: 38px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
 
-.explore-text {
-  max-width: 650px;
-  margin: 0 auto 25px auto;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #e7dfd2;
-}
+      .explore-text {
+        max-width: 650px;
+        margin: 0 auto 25px auto;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #e7dfd2;
+      }
 
-.explore-btn {
-  display: inline-block;
-  background: #3b82f6;
-  color: white !important;
-  padding: 14px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-}
+      .explore-btn {
+        display: inline-block;
+        background: #3b82f6;
+        color: white !important;
+        padding: 14px 28px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+      }
 
-.explore-btn:hover {
-  background: #2563eb;
-}
+      .explore-btn:hover {
+        background: #2563eb;
+      }
       
+      .interactive-section {
+        max-width: 1000px;
+        margin: 60px auto 40px auto;
+        padding: 0 24px;
+      }
+
+      .nav-tabs {
+        margin-bottom: 20px;
+      }
+
+      .nav-tabs > li > a {
+        color: #1d1d1d;
+        font-weight: bold;
+      }
+
+      .tab-content {
+        background: white;
+        border: 1px solid #ddd;
+        border-top: none;
+        padding: 20px;
+      }
+
+      .sidebar-box {
+        background: #f7f4ee;
+        border: 1px solid #ddd6ca;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
       
-.interactive-section {
-  max-width: 1000px;
-  margin: 60px auto 40px auto;
-  padding: 0 24px;
-}
+      .builder-results {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
 
-.nav-tabs {
-  margin-bottom: 20px;
-}
+      .builder-card {
+        flex: 1;
+        min-width: 240px;
+        background: white;
+        border: 1px solid #d9d9d9;
+        padding: 28px 24px;
+        text-align: center;
+        border-radius: 8px;
+      }
 
-.nav-tabs > li > a {
-  color: #1d1d1d;
-  font-weight: bold;
-}
+      .builder-label {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #666666;
+        margin-bottom: 10px;
+      }
 
-.tab-content {
-  background: white;
-  border: 1px solid #ddd;
-  border-top: none;
-  padding: 20px;
-}
-.builder-results {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
+      .builder-value {
+        font-size: 42px;
+        font-weight: bold;
+        color: #3b82f6;
+        line-height: 1.1;
+      }
 
-.builder-card {
-  flex: 1;
-  min-width: 240px;
-  background: white;
-  border: 1px solid #d9d9d9;
-  padding: 28px 24px;
-  text-align: center;
-  border-radius: 8px;
-}
-
-.builder-label {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #666666;
-  margin-bottom: 10px;
-}
-
-.builder-value {
-  font-size: 42px;
-  font-weight: bold;
-  color: #3b82f6;
-  line-height: 1.1;
-}
-
-.builder-subtext {
-  margin-top: 18px;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #444444;
-}
+      .builder-subtext {
+        margin-top: 18px;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #444444;
+      }
     "))
   ),
-  
   
   div(
     class = "hero",
@@ -422,8 +418,6 @@ ui <- fluidPage(
   
   div(
     class = "article",
-    
-    
     p(
       class = "story-p dropcap",
       "Imagine you open Airbnb looking for a place to stay for a weekend in New York City. After scouring through
@@ -439,7 +433,6 @@ ui <- fluidPage(
        out what actually drives the price of these listings. We looked at geography, room type, and review counts.
        What we found confirms some of our previous expectations, but also gave us some surprises."
     ),
-    
     
     div(class = "chapter-tag", "Chapter I-Location"),
     div(class = "story-h2", HTML("The Borough Gap Is Real, However <em>Neighborhoods Are What Scramble the Map</em>")),
@@ -510,7 +503,7 @@ ui <- fluidPage(
       div(class = "viz-title", "The Price of Privacy: Full Price Ranges by Room Type and Borough"),
       div(
         class = "viz-sub",
-        "Line = 10th to 90th percentile. Point = median."
+        "Line = middle 50% range (25th to 75th percentile). Point = median."
       ),
       plotOutput("plot_roomtype", height = "420px")
     ),
@@ -523,7 +516,6 @@ ui <- fluidPage(
        feature that separates them: a door that closes."
     ),
     
-
     div(class = "chapter-tag", "Chapter III - Reviews"),
     div(class = "story-h2", HTML("The Most Counterintuitive Finding: <em>More Reviews, Slightly Lower Price</em>")),
     
@@ -554,15 +546,6 @@ ui <- fluidPage(
       plotOutput("plot_reviews", height = "330px")
     ),
     
-    p(
-      class = "story-p",
-      "The explanation makes sense: hosts price their listings based on
-       what the market will bear for their location and space, and not on the reputation they
-       have built. A host with 300 glowing reviews in Mott Haven still cannot charge Tribeca
-       prices. A brand-new listing with zero reviews in the West Village can charge whatever
-       the neighborhood supports. The market is pricing the address. Not the host."
-    ),
-    
     div(
       class = "conclusion",
       h2(HTML("So What Are You <em>Actually</em> Paying For?")),
@@ -572,14 +555,8 @@ ui <- fluidPage(
          And reputation? It registers at essentially zero in the price equation."
       ),
       p(
-        "This should change how all travelers search for stays. Reading review counts should not be price signals. Stop
-         assuming a well-reviewed listing justifies its rate. Instead, ask two questions
-         before anything else: Exactly where is it and how much privacy am I getting?"
-      ),
-      p(
         "The price of a New York Airbnb turns out to be strikingly literal. You pay for a
-         zip code. You pay for privacy. The charm and the glowing reviews of the listing are
-         all real. They just do not show up in the final price number."
+         zip code. You pay for privacy."
       ),
       p(
         class = "kicker",
@@ -587,28 +564,12 @@ ui <- fluidPage(
       )
     )
   ),
+  
   div(
     class = "explore-section",
-    
     div(class = "explore-small", "Now It Is Your Turn"),
-    
-    div(
-      class = "explore-title",
-      HTML("Explore the <em>New York Airbnb Market</em>")
-    ),
-    
-    div(
-      class = "explore-text",
-      "You have seen how price is shaped by location, space, and demand. 
-     Now try it yourself. Explore real listings, compare neighborhoods, 
-     and see what you would actually pay."
-    ),
-    
-    tags$a(
-      href = "#interactive-tools",
-      class = "explore-btn",
-      "Start Exploring"
-    )
+    div(class = "explore-title", HTML("Explore the <em>New York Airbnb Market</em>")),
+    tags$a(href = "#interactive-tools", class = "explore-btn", "Start Exploring")
   ),
   
   hr(),
@@ -616,7 +577,6 @@ ui <- fluidPage(
   div(
     id = "interactive-tools",
     class = "interactive-section",
-    
     h2("Interactive Visualizations"),
     
     tabsetPanel(
@@ -625,51 +585,45 @@ ui <- fluidPage(
       tabPanel(
         "Interactive Map",
         br(),
-        sliderInput("map_price", "Price range", min = 0, max = 1000, value = c(50, 300), step = 10),
-        selectInput("map_room", "Room type", choices = c("All", sort(unique(df$room_type)))),
-        selectInput("map_borough", "Borough", choices = c("All", sort(unique(df$neighbourhood_group)))),
-        leafletOutput("listing_map", height = "500px")
-      ),
-      
-      tabPanel(
-        "Top Neighborhood Comparison",
-        br(),
-        selectInput("neigh_borough", "Select borough", choices = sort(unique(df$neighbourhood_group))),
-        plotOutput("top_neighborhoods", height = "450px")
+        fluidRow(
+          column(4, 
+                 div(class = "sidebar-box",
+                     sliderInput("map_price", "Price range", min = 0, max = 1000, value = c(50, 300), step = 10),
+                     selectInput("map_room", "Room type", choices = c("All", sort(unique(df$room_type)))),
+                     selectInput("map_borough", "Borough", choices = c("All", sort(unique(df$neighbourhood_group))))
+                 )
+          ),
+          column(8, 
+                 leafletOutput("listing_map", height = "500px")
+          )
+        )
       ),
       
       tabPanel(
         "Build Your Listing",
         br(),
         fluidRow(
-          column(
-            4,
-            selectInput("build_borough", "Choose borough", choices = sort(unique(df$neighbourhood_group))),
-            uiOutput("build_neighborhood_ui"),
-            selectInput("build_room", "Choose room type", choices = sort(unique(df$room_type))),
-            sliderInput("build_min_nights", "Minimum nights", min = 1, max = 30, value = 1, step = 1),
-            sliderInput("build_reviews", "Minimum number of reviews", min = 0, max = 300, value = 0, step = 1)
+          column(4,
+                 div(class = "sidebar-box",
+                     selectInput("build_borough", "Choose borough", choices = sort(unique(df$neighbourhood_group))),
+                     uiOutput("build_neighborhood_ui"),
+                     selectInput("build_room", "Choose room type", choices = sort(unique(df$room_type))),
+                     sliderInput("build_min_nights", "Minimum nights", min = 1, max = 30, value = 1, step = 1),
+                     sliderInput("build_reviews", "Minimum number of reviews", min = 0, max = 300, value = 0, step = 1)
+                 )
           ),
-          column(
-            8,
-            br(),
-            div(
-              class = "builder-results",
-              div(
-                class = "builder-card",
-                div(class = "builder-label", "Estimated Nightly Price"),
-                div(class = "builder-value", textOutput("build_price"))
-              ),
-              div(
-                class = "builder-card",
-                div(class = "builder-label", "Matching Listings"),
-                div(class = "builder-value", textOutput("build_matches"))
-              )
-            ),
-            div(
-              class = "builder-subtext",
-              textOutput("build_summary")
-            )
+          column(8,
+                 div(class = "builder-results",
+                     div(class = "builder-card",
+                         div(class = "builder-label", "Estimated Nightly Price"),
+                         div(class = "builder-value", textOutput("build_price"))
+                     ),
+                     div(class = "builder-card",
+                         div(class = "builder-label", "Matching Listings"),
+                         div(class = "builder-value", textOutput("build_matches"))
+                     )
+                 ),
+                 div(class = "builder-subtext", textOutput("build_summary"))
           )
         )
       ),
@@ -678,360 +632,163 @@ ui <- fluidPage(
         "Price Percentile Explorer",
         br(),
         fluidRow(
-          column(
-            4,
-            selectInput(
-              "dist_borough",
-              "Choose borough",
-              choices = sort(unique(df$neighbourhood_group)),
-              selected = "Manhattan"
-            ),
-            selectInput(
-              "dist_room",
-              "Choose room type",
-              choices = sort(unique(df$room_type)),
-              selected = "Entire home/apt"
-            ),
-            sliderInput(
-              "dist_budget",
-              "Choose a nightly budget",
-              min = 0,
-              max = 1000,
-              value = 200,
-              step = 10
-            ),
-            br(),
-            h4(textOutput("dist_percentile")),
-            p(textOutput("dist_summary"))
+          column(4,
+                 div(class = "sidebar-box",
+                     selectInput("dist_borough", "Choose borough", choices = sort(unique(df$neighbourhood_group)), selected = "Manhattan"),
+                     selectInput("dist_room", "Choose room type", choices = sort(unique(df$room_type)), selected = "Entire home/apt"),
+                     sliderInput("dist_budget", "Choose a nightly budget", min = 0, max = 1000, value = 200, step = 10)
+                 ),
+                 h4(textOutput("dist_percentile")),
+                 p(textOutput("dist_summary"))
           ),
-          column(
-            8,
-            plotOutput("price_distribution", height = "450px")
+          column(8,
+                 plotOutput("price_distribution", height = "450px")
+          )
+        )
+      ),
+      
+      tabPanel(
+        "Availability Heatmap",
+        br(),
+        fluidRow(
+          column(4,
+                 div(class = "sidebar-box",
+                     selectInput("heat_room", "Room type", choices = c("All", sort(unique(df$room_type))), selected = "All"),
+                     sliderInput("heat_min_nights", "Max minimum nights", min = 1, max = 30, value = 30, step = 1),
+                     sliderInput("heat_price", "Max price", min = 0, max = 1000, value = 500, step = 50)
+                 )
+          ),
+          column(8,
+                 plotlyOutput("heatmap_plot", height = "360px")
           )
         )
       )
-      
     )
   ),
   
-  div(
-    class = "footer",
-    "Data: NYC Airbnb Open Data · Kaggle, 2019"
-  )
-   
+  div(class = "footer", "Data: NYC Airbnb Open Data · Kaggle, 2019")
 )
-
 
 server <- function(input, output) {
   output$plot_location <- renderPlot({
-    boro_order <- borough_stats %>%
-      arrange(median_price) %>%
-      pull(neighbourhood_group)
-    
-    bs <- borough_stats %>%
-      mutate(neighbourhood_group = factor(neighbourhood_group, levels = boro_order))
-    
-    ns <- neighborhood_stats %>%
-      group_by(neighbourhood_group) %>%
-      slice_max(order_by = median_price, n = 6, with_ties = FALSE) %>%
-      ungroup() %>%
-      mutate(neighbourhood_group = factor(neighbourhood_group, levels = boro_order))
+    boro_order <- borough_stats %>% arrange(median_price) %>% pull(neighbourhood_group)
+    bs <- borough_stats %>% mutate(neighbourhood_group = factor(neighbourhood_group, levels = boro_order))
+    ns <- neighborhood_stats %>% group_by(neighbourhood_group) %>% slice_max(order_by = median_price, n = 6, with_ties = FALSE) %>% ungroup() %>% mutate(neighbourhood_group = factor(neighbourhood_group, levels = boro_order))
     
     ggplot() +
-      geom_col(
-        data = bs,
-        aes(x = median_price, y = neighbourhood_group, fill = neighbourhood_group),
-        alpha = 0.28,
-        width = 0.6
-      ) +
-      geom_point(
-        data = ns,
-        aes(x = median_price, y = neighbourhood_group, colour = neighbourhood_group),
-        size = 2.8,
-        alpha = 0.75,
-        position = position_jitter(height = 0.08, width = 0)
-      ) +
-      geom_text(
-        data = bs,
-        aes(x = median_price, y = neighbourhood_group, label = paste0("$", round(median_price))),
-        hjust = -0.15,
-        size = 3.8,
-        colour = "#1d1d1d"
-      ) +
+      geom_col(data = bs, aes(x = median_price, y = neighbourhood_group, fill = neighbourhood_group), alpha = 0.15, width = 0.7) +
+      geom_point(data = ns, aes(x = median_price, y = neighbourhood_group, colour = neighbourhood_group), size = 3.5, alpha = 0.8, position = position_jitter(height = 0.1, width = 0)) +
+      geom_text(data = bs, aes(x = median_price, y = neighbourhood_group, label = paste0("$", round(median_price))), hjust = -0.2, size = 4, fontface = "bold", colour = "#111111") +
       scale_fill_manual(values = boro_cols, guide = "none") +
       scale_colour_manual(values = boro_cols, guide = "none") +
-      scale_x_continuous(
-        labels = dollar_format(),
-        limits = c(0, max(c(bs$median_price, ns$median_price)) + 35)
-      ) +
-      labs(
-        x = "Median nightly price (USD)",
-        y = NULL,
-        title = "Location drives price, but neighborhoods still play a part",
-        subtitle = "Bars show borough medians. Dots show higher-priced neighborhoods with at least 50 listings.",
-        caption = "Source: NYC Airbnb Open Data, 2019"
-      ) +
-      story_theme() +
-      theme(axis.text.y = element_text(face = "bold"))
+      scale_x_continuous(labels = dollar_format(), expand = expansion(mult = c(0, .15))) +
+      labs(x = "Median nightly price (USD)", y = NULL) +
+      story_theme()
   }, bg = "#f7f4ee")
   
   output$plot_roomtype <- renderPlot({
     room_order <- c("Bronx", "Staten Island", "Queens", "Brooklyn", "Manhattan")
     type_order <- c("Shared room", "Private room", "Entire home/apt")
-    
-    rs <- room_stats %>%
-      mutate(
-        neighbourhood_group = factor(neighbourhood_group, levels = room_order),
-        room_type = factor(room_type, levels = type_order)
-      )
+    rs <- room_stats %>% mutate(neighbourhood_group = factor(neighbourhood_group, levels = room_order), room_type = factor(room_type, levels = type_order))
     
     ggplot(rs, aes(y = neighbourhood_group, colour = room_type)) +
-      geom_segment(
-        aes(
-          x = p10, xend = p90,
-          y = neighbourhood_group, yend = neighbourhood_group
-        ),
-        linewidth = 1,
-        alpha = 0.35,
-        position = position_dodge(width = 0.65)
-      ) +
-      geom_point(
-        aes(x = median),
-        size = 2.8,
-        position = position_dodge(width = 0.65)
-      ) +
-      geom_text(
-        aes(x = median, label = paste0("$", round(median))),
-        hjust = -0.2,
-        size = 3.3,
-        position = position_dodge(width = 0.65),
-        show.legend = FALSE
-      ) +
+      geom_segment(aes(x = p25, xend = p75, y = neighbourhood_group, yend = neighbourhood_group), linewidth = 4, alpha = 0.25, position = position_dodge(width = 0.7)) +
+      geom_point(aes(x = median), size = 3.5, position = position_dodge(width = 0.7)) +
       scale_colour_manual(values = room_cols) +
-      scale_x_continuous(
-        labels = dollar_format(),
-        limits = c(0, max(rs$p90) + 40)
-      ) +
-      labs(
-        x = "Nightly price (USD)",
-        y = NULL,
-        title = "Privacy and Space create clear price tiers",
-        subtitle = "Each line shows the 10th to 90th percentile range. Each point shows the median.",
-        caption = "Source: NYC Airbnb Open Data, 2019"
-      ) +
-      story_theme() +
-      theme(axis.text.y = element_text(face = "bold"))
+      scale_x_continuous(labels = dollar_format(), expand = expansion(mult = c(0, 0.1))) +
+      labs(x = "Nightly price (USD)", y = NULL) +
+      story_theme()
   }, bg = "#f7f4ee")
   
   output$plot_reviews <- renderPlot({
     ggplot(review_stats, aes(x = review_group, y = median_price)) +
-      geom_col(fill = "#1f4e79", alpha = 0.82, width = 0.65) +
-      geom_text(
-        aes(label = paste0("$", round(median_price))),
-        vjust = -0.4,
-        size = 4,
-        colour = "#1f4e79"
-      ) +
-      scale_y_continuous(
-        labels = dollar_format(),
-        limits = c(0, max(review_stats$median_price) + 25)
-      ) +
-      labs(
-        x = "Number of reviews",
-        y = "Median nightly price",
-        title = "Review count has little pricing power",
-        subtitle = paste0("Pearson correlation between number of reviews and price: ", round(review_correlation, 2)),
-        caption = "Source: NYC Airbnb Open Data, 2019"
-      ) +
-      story_theme() +
-      theme(panel.grid.major.y = element_line(colour = "#ddd6ca", linewidth = 0.45))
+      geom_col(fill = "#1d1d1d", alpha = 0.9, width = 0.6) +
+      geom_text(aes(label = paste0("$", round(median_price))), vjust = -0.5, size = 4, fontface = "bold", colour = "#1d1d1d") +
+      scale_y_continuous(labels = dollar_format(), expand = expansion(mult = c(0, .2))) +
+      labs(x = "Number of reviews", y = "Median nightly price") +
+      story_theme()
   }, bg = "#f7f4ee")
   
-  
-  # Interactive Map
   map_data <- reactive({
-    filtered <- df %>%
-      filter(price >= input$map_price[1], price <= input$map_price[2])
-    
-    if (input$map_room != "All") {
-      filtered <- filtered %>% filter(room_type == input$map_room)
-    }
-    
-    if (input$map_borough != "All") {
-      filtered <- filtered %>% filter(neighbourhood_group == input$map_borough)
-    }
-    
-    filtered <- filtered %>%
-      filter(!is.na(latitude), !is.na(longitude))
-    
-    if (nrow(filtered) > 5000) {
-      filtered <- filtered %>% slice_sample(n = 5000)
-    }
-    
+    filtered <- df %>% filter(price >= input$map_price[1], price <= input$map_price[2])
+    if (input$map_room != "All") filtered <- filtered %>% filter(room_type == input$map_room)
+    if (input$map_borough != "All") filtered <- filtered %>% filter(neighbourhood_group == input$map_borough)
+    filtered <- filtered %>% filter(!is.na(latitude), !is.na(longitude))
+    if (nrow(filtered) > 5000) filtered <- filtered %>% slice_sample(n = 5000)
     filtered
   })
   
   output$listing_map <- renderLeaflet({
     data <- map_data()
-    
-    pal <- colorNumeric("Blues", domain = data$price)
-    
+    pal <- colorNumeric(
+      palette = c("#ebf8ff", "#3182ce", "#2c5282", "#1a365d"), 
+      domain = data$price
+    )
     leaflet(data) %>%
       addProviderTiles(providers$CartoDB.Positron) %>%
       addCircleMarkers(
-        lng = ~longitude,
-        lat = ~latitude,
-        radius = 4,
-        stroke = FALSE,
-        fillOpacity = 0.7,
-        color = ~pal(price),
-        label = ~paste0(
-          "Price: $", price,
-          " | Neighborhood: ", neighbourhood,
-          " | Room Type: ", room_type
-        )
+        lng = ~longitude, lat = ~latitude, radius = 4, stroke = FALSE, fillOpacity = 0.7, color = ~pal(price),
+        label = ~paste0("Price: $", price, " | Neighborhood: ", neighbourhood)
       ) %>%
       addLegend("bottomright", pal = pal, values = ~price, title = "Price")
   })
   
-  # Top Neighborhood Comparison
-  output$top_neighborhoods <- renderPlot({
-    top10 <- df %>%
-      filter(neighbourhood_group == input$neigh_borough) %>%
-      group_by(neighbourhood) %>%
-      summarise(
-        median_price = median(price, na.rm = TRUE),
-        n = n(),
-        .groups = "drop"
-      ) %>%
-      filter(n >= 10) %>%
-      arrange(desc(median_price)) %>%
-      slice_head(n = 10) %>%
-      mutate(neighbourhood = reorder(neighbourhood, median_price))
-    
-    ggplot(top10, aes(x = median_price, y = neighbourhood)) +
-      geom_col(fill = "darkblue") +
-      geom_text(aes(label = paste0("$", round(median_price))), hjust = -0.15, size = 4) +
-      scale_x_continuous(labels = dollar_format(), limits = c(0, max(top10$median_price) * 1.15)) +
-      labs(
-        title = paste("Top 10 Neighborhoods in", input$neigh_borough),
-        x = "Median nightly price",
-        y = NULL
-      ) +
-      theme_minimal()
-  })
-  
-  # Build Your Listing
   output$build_neighborhood_ui <- renderUI({
-    neighborhoods <- df %>%
-      filter(neighbourhood_group == input$build_borough) %>%
-      distinct(neighbourhood) %>%
-      arrange(neighbourhood) %>%
-      pull(neighbourhood)
-    
+    neighborhoods <- df %>% filter(neighbourhood_group == input$build_borough) %>% distinct(neighbourhood) %>% arrange(neighbourhood) %>% pull(neighbourhood)
     selectInput("build_neighborhood", "Choose neighborhood", choices = neighborhoods)
   })
   
   build_data <- reactive({
     req(input$build_neighborhood)
-    
-    df %>%
-      filter(
-        neighbourhood_group == input$build_borough,
-        neighbourhood == input$build_neighborhood,
-        room_type == input$build_room,
-        minimum_nights >= input$build_min_nights,
-        number_of_reviews >= input$build_reviews
-      )
+    df %>% filter(neighbourhood_group == input$build_borough, neighbourhood == input$build_neighborhood, room_type == input$build_room, minimum_nights >= input$build_min_nights, number_of_reviews >= input$build_reviews)
   })
   
   output$build_price <- renderText({
     data <- build_data()
-    
-    if (nrow(data) == 0) {
-      return("No matching listings found")
-    }
-    
+    if (nrow(data) == 0) return("N/A")
     paste0("$", round(median(data$price, na.rm = TRUE)))
   })
   
-  output$build_matches <- renderText({
-    data <- build_data()
-    paste0(nrow(data))
-  })
-  #price distribution graph
-  dist_data <- reactive({
-    df %>%
-      filter(
-        neighbourhood_group == input$dist_borough,
-        room_type == input$dist_room,
-        price > 0,
-        price <= 1000
-      )
-  })
+  output$build_matches <- renderText({ paste0(nrow(build_data())) })
+  
+  dist_data <- reactive({ df %>% filter(neighbourhood_group == input$dist_borough, room_type == input$dist_room, price > 0, price <= 1000) })
   
   output$price_distribution <- renderPlot({
     data <- dist_data()
-    
     req(nrow(data) > 0)
-    
     med_price <- median(data$price, na.rm = TRUE)
-    
     ggplot(data, aes(x = price)) +
-      geom_histogram(
-        binwidth = 25,
-        fill = "#93c5fd",
-        color = "white",
-        alpha = 0.9
-      ) +
-      geom_vline(
-        xintercept = input$dist_budget,
-        color = "#1d4ed8",
-        linewidth = 1.2,
-        linetype = "solid"
-      ) +
-      geom_vline(
-        xintercept = med_price,
-        color = "#dc2626",
-        linewidth = 1,
-        linetype = "dashed"
-      ) +
-      labs(
-        title = paste("Price Distribution in", input$dist_borough),
-        subtitle = paste(input$dist_room, "| Solid blue line = your budget | Dashed red line = median"),
-        x = "Nightly price (USD)",
-        y = "Number of listings"
-      ) +
+      geom_histogram(binwidth = 25, fill = "#3b82f6", color = "white", alpha = 0.8) +
+      geom_vline(xintercept = input$dist_budget, color = "#1d1d1d", linewidth = 1.2) +
+      geom_vline(xintercept = med_price, color = "#b23a2f", linewidth = 1, linetype = "dashed") +
       scale_x_continuous(labels = dollar_format()) +
-      theme_minimal(base_size = 13)
+      theme_minimal()
   })
+  
   output$dist_percentile <- renderText({
     data <- dist_data()
-    
     req(nrow(data) > 0)
-    
-    pct <- mean(data$price <= input$dist_budget, na.rm = TRUE) * 100
-    
-    paste0("Your budget is higher than about ", round(pct), "% of listings in this group.")
+    paste0("Your budget is higher than about ", round(mean(data$price <= input$dist_budget, na.rm = TRUE) * 100), "% of listings.")
   })
   
   output$dist_summary <- renderText({
     data <- dist_data()
-    
     req(nrow(data) > 0)
-    
-    q25 <- quantile(data$price, 0.25, na.rm = TRUE)
-    med <- median(data$price, na.rm = TRUE)
-    q75 <- quantile(data$price, 0.75, na.rm = TRUE)
-    
-    paste0(
-      "Typical prices for ", input$dist_room, " listings in ", input$dist_borough,
-      " range from about $", round(q25),
-      " to $", round(q75),
-      ", with a median of $", round(med), "."
-    )
+    paste0("Median price is $", round(median(data$price, na.rm = TRUE)), ".")
+  })
+  
+  heatmap_data <- reactive({
+    data <- df %>% filter(price > 0, price <= input$heat_price, minimum_nights <= input$heat_min_nights)
+    if (input$heat_room != "All") data <- data %>% filter(room_type == input$heat_room)
+    max_p <- ceiling(max(data$price, na.rm = TRUE) / 100) * 100
+    data %>% mutate(price_bin = cut(price, breaks = seq(0, max_p, by = 100), include.lowest = TRUE)) %>%
+      group_by(neighbourhood_group, price_bin) %>% summarise(avg_availability = mean(availability_365, na.rm = TRUE), .groups = "drop")
+  })
+  
+  output$heatmap_plot <- renderPlotly({
+    plot_ly(data = heatmap_data(), x = ~price_bin, y = ~neighbourhood_group, z = ~avg_availability, type = "heatmap", colors = colorRamp(c("#f7fbff", "#3b82f6", "#1e3a8a"))) %>%
+      layout(xaxis = list(title = "Price Range"), yaxis = list(title = "Borough"))
   })
 }
 
-# Run the application 
 shinyApp(ui = ui, server = server)
